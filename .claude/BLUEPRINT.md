@@ -46,21 +46,17 @@
 
 ---
 
-## AGENTS — Team Configuration
+## AGENTS — Baseline
 
-| Agent | Role | Active |
-| ----- | ---- | ------ |
-|       |      | yes    |
+- software-engineer
+-
 
 ---
 
-## SKILLS — Active Skills
+## SKILLS — Baseline
 
-| Skill               | Scope                                        |
-| ------------------- | -------------------------------------------- |
-| extreme-programming | mandatory — all agents                       |
-| python              | on-demand — modern-python references         |
-| data-manipulation   | on-demand — pandas, numpy, xarray references |
+- python
+- data-engineering
 
 ---
 

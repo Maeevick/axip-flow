@@ -23,8 +23,9 @@ fi
 
 BLOCKED_PATTERNS=(
   # Filesystem destruction
-  'rm\s+-[a-zA-Z]*r[a-zA-Z]*\s'   # rm -r, rm -rf, rm -fr and variants
-  'rm\s+-[a-zA-Z]*f[a-zA-Z]*\s'   # rm -f and variants
+  '\brm\b'                          # all rm mention
+  'rm\s+-[a-zA-Z]*r[a-zA-Z]*'       # rm -r, rm -rf, rm -fr and variants
+  'rm\s+-[a-zA-Z]*f[a-zA-Z]*'       # rm -f and variants
   '\brmdir\b'                       # directory removal
   '\bshred\b'                       # secure file deletion
   '\btruncate\b'                    # file truncation

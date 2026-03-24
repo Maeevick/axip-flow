@@ -47,7 +47,7 @@ Every commit produced by axip is authored by `axip-flow` and follows the `flow(c
 ├── skills/                   # Loadable skill modules
 │   ├── extreme-programming/  # XP practices (mandatory)
 │   ├── python/               # Python 3.12+ standards
-│   ├── data-manipulation/    # Scientific data formats
+│   ├── data-engineering/     # Scientific data formats
 │   ├── ...                   # More to come I have just started with my current needs
 │   ├── read-tasks/           # /read-tasks slash command
 │   ├── add-task/             # /add-task slash command
@@ -196,7 +196,7 @@ The BLUEPRINT is the single source of truth for the agentic team. Structure:
 
 ## Security
 
-The `pre-tool-guard.sh` hook blocks destructive Bash commands by default:
+The `pre-tool-guard.sh` hook blocks (tries to at least) destructive Bash commands by default:
 
 - Filesystem destruction (`rm -rf`, `shred`, `truncate`)
 - Disk operations (`mkfs`, `dd of=`, `fdisk`)
@@ -209,12 +209,11 @@ The `pre-tool-guard.sh` hook blocks destructive Bash commands by default:
 
 The list is in `BLOCKED_PATTERNS` inside `pre-tool-guard.sh` — extend it for your context.
 
-Agent tools are locked by design:
+Agent tools are (almost) locked by design:
 
-- Implementing agents: `Write, Edit, Read, Glob, Grep`
+- Driver agents: `Write, Edit, Read, Glob, Grep, (Bash)`
 - Reviewer agents: `Read, Grep, Glob`
-
-No agent has `Bash` access. The guard protects the main orchestrator only.
+- Advisory agents: `Write, Edit, Read, Glob, Grep, WebFetch, WebSearch`
 
 ---
 
@@ -241,6 +240,10 @@ Zed offers excellent UX, stability, and performance as an editor. However the Cl
 - `/ide` (and other slash commands) CLI connection is not supported
 
 Project `.claude/` files (CLAUDE.md, BLUEPRINT.md, agents, skills) are readable. Zed works well as a companion editor alongside a terminal running axip — use it to read and review files while the terminal handles agent execution.
+
+### IntelliJ
+
+I didn't use their products for years, sorry.
 
 ---
 

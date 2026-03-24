@@ -1,6 +1,6 @@
 ---
-name: data-manipulation
-description: Data manipulation and scientific format handling. Load when working with arrays, dataframes, or domain-specific file formats.
+name: data-engineering
+description: Data engineering and scientific format handling. Load when working with arrays, dataframes, or domain-specific file formats.
 ---
 
 # Data Manipulation
